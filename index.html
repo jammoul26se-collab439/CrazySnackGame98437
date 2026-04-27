@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <title>Crazy Snake Game</title>
+    <link rel="stylesheet" href="style.css">  
+    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap" rel="stylesheet">  
+</head>
+<body>
+    <div id="score">Score: 0000</div> <div id="time">00:00</div>
+    <div id="highScore">HighScore: 0000</div>
+    <div id="ZoomWrapper">
+    <div class="game-wrapper">
+        <div class="container">
+            <div class="game-area">
+                <div id="loading">Loading...</div>
+                <h1 id="gameTitle">Crazy Snake Game</h1>
+                <div id="countdown"></div>
+                <div id="startWarning">You should Start Game First!</div>
+                <div id="shopMessage">This feature is not available in this version</div>
+                <canvas id="game" width="400" height="400"></canvas>
+            </div>
+            <div class="controls">
+                <div class="row">
+                    <button onclick="setDirection('up')" style="background:#3498db;">Up</button>
+                </div>
+                <div class="row middle">
+                    <button onclick="setDirection('left')" style="background:#2ecc71;">Left</button>
+                    <button onclick="setDirection('right')" style="background:#f1c40f;">Right</button>
+                </div>
+                <div class="row">
+                    <button onclick="setDirection('down')" style="background:#e74c3c;">Down</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="optionsMenu" class="options-menu">
+        <div class = "options-box">
+            <div style ="color:red; font-size:14px; margin-bottom:10px;">
+                This feature is currently disabled ! (Only Volume)
+            </div>  
+
+            <h2>Options</h2>
+             <label>Volume</label>
+            <input type="range" id="volumeSlider" min="0" max="100" step="25" value="50"> 
+            <label>Screen Size</label>
+            <input type="range" id="sizeSlider" min="50" max="100" value="100">
+            <button onclick="toggleOptions()">Close</button>
+        </div>
+    </div>
+    </div> <!-- zoomWrapper -->
+    <div class="buttons">
+        <button id="startBtn" onclick="handleStartPause()">Start</button>
+        <button class="restart-btn" onclick="restartGame()" disabled>Restart</button>
+         <button class="options-btn" onclick="toggleOptions()">Options</button>
+         <button class="shop-btn" onclick="openShop()" title="Coming Soon">Shop</button>
+         <button class="about-btn" onclick="goToAbout()">About Us</button>
+        <button class="exit-btn" onclick="exitGame()">Exit</button>
+    </div>
+    <div class="version-label">Version 1.0</div>
+    <div class="signature">
+        <div class="by-jawad">By Jawad Jammoul</div>
+        <div>&#169; 2026 All Right Reserved</div>
+    </div>
+    <script src="game.js"></script>
+</body>
+</html>
