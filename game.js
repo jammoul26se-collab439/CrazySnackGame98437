@@ -701,6 +701,3 @@ function exitGame() {
        }, 500);
       
      } 
-
-
-    
