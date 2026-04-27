@@ -1,0 +1,335 @@
+body {
+        margin: 0;
+        padding: 0;
+        background-image: url(WallpaperPage.png);
+        background-size: cover;
+        background-position: center;
+        overflow-x: hidden;
+    }
+
+    #shopMessage {
+        position: absolute;
+        top:70%;
+        left:50%;
+        transform: translate(-50% , -50%);
+        background: rgba(0,0,0,0.7);
+        color: red;
+        font-size: 15px;
+        padding: 15px 25px;
+        border-radius : 10px;
+        display: none;
+        z-index: 999;
+        text-align: center;
+     }
+     
+    #startWarning {
+        position: absolute;
+        top:70%;
+        left:50%;
+        transform: translate(-50% , -50%);
+        background: rgba(0,0,0,0.7);
+        color: red;
+        font-size: 15px;
+        padding: 15px 25px;
+        border-radius : 10px;
+        display: none;
+        z-index: 999;
+        text-align: center;
+    }
+
+    .version-label {
+        margin-top: 80px;
+        text-align: left;
+        font-size: 18px;
+        color:black;
+        /*opacity:0.9;*/
+        font-family: Arial,sans-serif;
+        width: fit-content;
+        border-radius: 6px;
+        padding: 4px 8px;
+    }    
+
+    #up, #down, #left, #right {
+        margin-top: 30px;
+    }
+
+    #gameTitle {
+        position: relative;
+        left:7px;
+        text-align: center;
+        font-size: 36px;
+        font-weight: bold;
+        color: black;
+        margin: 15px 0 10px 0;
+        border: 2px solid #b35a00;
+        background-color: orange;
+    }
+
+    #score {
+        background-color: orange;
+        color:black;
+        padding: 5px 10px;
+        border-radius: 10px;
+        position: absolute;
+        top:20px;
+        left: 20px;
+        font-size: 18px;
+        font-weight: bold;
+        border: 2px solid #b35a00;
+    }
+
+    #highScore {
+        background-color: orange;
+        color:black;
+        padding: 5px 10px;
+        border-radius: 8px;
+        position: absolute;
+        top:65px;
+        left:20px;
+        font-size:18px;
+        font-weight:bold;
+        border: 2px solid #b35a00;
+    }
+
+    
+    #countdown {
+        position: absolute;
+        top: 70%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        font-size: 30px;
+        font-weight: bold;
+        color: white;
+        z-index: 10;
+        text-align: center;
+    }
+
+    
+    .game-wrapper {
+        display: flex;
+        justify-content: center;
+        margin-top: 40px;
+    }
+
+    .container {
+        display: flex;
+        gap: 40px;
+        align-items: center;
+    }
+
+    .game-area {
+        position: relative;
+        width: 400px;
+        height: 400px;
+    }
+
+    canvas {
+        display:block;
+        margin: 10px auto;
+        background: black;
+        border: 8px solid #34495e;
+        transition: filter 0.2s ease;
+        
+    }
+
+  
+    #loading {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        font-size: 30px;
+        color: white;
+        z-index: 10;
+        display: none;
+    }
+
+    
+    .controls {
+        margin-top: 70px;
+        margin-left: 100px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .row {
+        display: flex;
+        gap:10px;
+        justify-content: center;
+        margin: 5px 0;
+    }
+
+    .middle {
+        display: flex;
+        gap: 40px;
+    }
+
+    .controls button {
+        width: 70px;
+        height: 70px;
+        border-radius: 50%;
+        font-size: 14px;
+        color: white;
+        box-shadow: 0 3px 8px rgba(0,0,0,0.3);
+    }
+
+    
+    .buttons {
+        position: absolute;
+        color:white;
+        border:#222;
+        padding: 10px;
+        border-radius: 6px;
+        cursor: pointer;
+        left: 20px;
+        top: 50%;
+        transform: translateY(-50%);
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+    }
+
+
+    .buttons button {
+        width: 100px;
+        height: 50px;
+        font-size: 16px;
+        font-family:Georgia, 'Times New Roman', Times, serif;
+    }
+
+    .restart-btn:disabled {
+        opacity: 0.5;
+        cursor: not-allowed;
+    }
+
+    
+    @media (max-width: 600px) {
+        .container {
+            flex-direction: column;
+        }
+
+        canvas {
+            width: 90vw;
+            height: 90vw;
+        }
+
+        .buttons {
+            position: static;
+            transform: none;
+            margin-top: 10px;
+            align-items: center;
+        }
+    }
+
+        .options-menu {
+            position: fixed;
+            top:0;
+            left:0;
+            width:100%;
+            height:100%;
+            background : rgba(0,0,0,0.6);
+            display: none;
+            justify-content : center;
+            align-items: center;
+            z-index: 99999;
+        }
+
+        .options-box {
+            background: #222;
+            padding: 20px;
+            border-radius: 10px;
+            color: white;
+            width: 300px;
+            text-align: center;
+        }
+
+        .options-box input[type="range"] {
+            width:100%;
+            height:10px 0;
+            accent-color: blue;
+        }
+
+        #ZoomWrapper {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            transform-origin: center center;
+        }
+
+        #time {
+            position:absolute;
+            top:20px;
+            right:20px;
+            font-size: 30px;
+            font-weight: bold;
+            color:black;
+            border: 2px solid #b35a00;
+            background-color: orange;
+        }
+
+        .signature {
+            position: absolute;
+            right: 20px;
+            bottom: 20px;
+            text-align: right;
+            color:#222;
+            font-size: 30px;
+            opacity: 0.8;
+        }
+
+        .signature div:first-child {
+            font-weight: bold;
+        }
+
+        .signature div:last-child {
+            font-size: 20px;
+            opacity: 0.7;
+        }
+
+        .shop-btn {
+            opacity: 0.5;
+            cursor: not-allowed;
+        }
+
+        #startBtn {
+            background-color: #8a2be2;
+            color:white;
+        }
+
+        .restart-btn {
+            background-color: #8a2be2;
+            color:white;
+        }
+
+        .options-btn {
+            background-color: #8a2be2;
+            color:white;
+        }
+
+        .shop-btn {
+            background-color: #8a2be2;
+            color:white;
+        }
+
+        .about-btn {
+            background-color: #8a2be2;
+            color:white;
+        }
+
+        .exit-btn {
+            background-color: #8a2be2;
+            color:white;
+        }
+
+        button:disabled {
+            opacity: 0.7;
+        }
+
+
+        .by-jawad{
+            font-family: 'Great Vibes' , cursive;
+            font-size: 27px;
+            color: black;
+        }
+
