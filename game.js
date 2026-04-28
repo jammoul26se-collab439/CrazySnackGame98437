@@ -143,7 +143,7 @@ function openShop() {
     sound.play().catch( () => {});
 
     setTimeout( () => {
-        window.location.href="https://aboutme32755.netlify.app";
+        window.location.href="https://aboutme498398.netlify.app";
       } , 250);
    }
 

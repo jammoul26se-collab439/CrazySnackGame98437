@@ -209,16 +209,21 @@ body {
         body {
             overflow-x:hidden;
         }
-
+        .controls button {
+            width: 60px;
+            height: 60px;
+            font-size: 10px;
+        }
         .container {
             flex-direction: column;
+            justify-content: center;
             align-items: center;
-            gap: 15px;
+            gap: 10px;
         }
         
         .game-area {
-            width: 95vw;
-            height: 95vw;
+            width: 80vw;
+            height: 80vw;
         }
 
         canvas {
@@ -228,22 +233,26 @@ body {
 
         .controls {
          margin: 0;
-         margin-top: 10px;
+         display: flex;
+         align-items: center;
+         flex-direction : column;
         }
 
         .buttons {
             position: static;
             transform: none;
+            display: flex;
             flex-direction: row;
             flex-wrap: wrap;
             justify-content: center;
-            margin-top: 15px;
+            gap:8px;
+            margin: 0;
         }
 
         .buttons button {
-            width: 80px;
-            height: 45px;
-            font-size: 12px;
+            width: 70px;
+            height: 40px;
+            font-size: 11px;
         }
 
         #score , #highScore , #time {
@@ -268,7 +277,7 @@ body {
         }
 
         #gameTitle {
-            font-size: 22px;
+            font-size: 18px;
         }
 
         #signature {
