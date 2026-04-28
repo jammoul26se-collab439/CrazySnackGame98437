@@ -1,3 +1,8 @@
+if(window.innerWidth <=768 && !localStorage.getItem("mobileAlertShown")) {
+    alert("Best played on a laptop for better layout and controls");
+    localStorage.setItem("mobileAlertShown" , "true");
+}
+
 const canvas = document.getElementById("game");
 const ctx = canvas.getContext("2d");
 const box = 20;

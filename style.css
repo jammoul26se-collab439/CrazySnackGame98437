@@ -219,10 +219,13 @@ body {
         align-items: center;
         gap: 5px;
        }
+       .game-wrapper {
+        margin-top: 10px !important;
+       }
 
        .game-area {
-        width: 65vw;
-        height: 65vw;
+        width: 58vw;
+        height: 58vw;
        }
 
        canvas {
@@ -239,8 +242,8 @@ body {
        }
 
        .controls button {
-        width: 45px;
-        height: 45px;
+        width: 50px;
+        height: 50px;
         font-size: 10px;
        }
 
@@ -265,7 +268,19 @@ body {
       #gameTitle {
         font-size: 16px;
       }
+      #time {
+        font-size: 18px !important;
+        padding: 3px 8px;
+     }
 
+     .signature div:last-child {
+        font-size: 12px;
+     }
+
+     .by-jawad {
+        font-size: 18px;
+     }
+     
     }  /*End @media(for mobiles) */
 
         .options-menu {
