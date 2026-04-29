@@ -240,16 +240,16 @@ body {
         }
        
         .container {
-            flex-direction: column;
+            flex-direction: row;
             justify-content: center;
             align-items: center;
-            gap: 10px;
+            gap: 15px;
         }
 
         .game-area {
-            width: 55vw;
-            height: 55vw;
-            margin-left: 0px;
+            width: 52vw;
+            height: 52vw;
+            margin-left: 90px;
         }
 
         canvas {
@@ -259,25 +259,23 @@ body {
      
         .controls {
             margin:0;
-            margin-left: 0 !important;
-            display: flex;
-            flex-direction: column;
-            align-self: flex-end;
+            margin-left: 10px;
+            transform: translateY(80px);
         }
 
        .controls button {
-        width: 50px;
-        height: 50px;
-        font-size: 10px;
+        width: 45px;
+        height: 45px;
+        font-size: 9px;
        }
 
        .middle {
-        gap: 20px;
+        gap: 8px;
        }
 
        .buttons {
         position: relative;
-        top: -55px;
+        top: -60px;
         display: flex;
         flex-direction: column;
         gap: 5px;
@@ -287,9 +285,9 @@ body {
        }
 
        .buttons button {
-        width: 50px;
-        height: 25px;
-        font-size: 7px;
+        width: 55px;
+        height: 30px;
+        font-size: 8px;
        }
 
        #gameTitle {
