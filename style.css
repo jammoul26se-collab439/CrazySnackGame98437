@@ -265,7 +265,7 @@ body {
         .controls {
             margin:0;
             margin-left: 10px;
-            transform: translate(10px , 120px);
+            transform: translate(10px , 180px);
         }
 
        .controls button {
@@ -296,7 +296,7 @@ body {
        }
 
        .version-label {
-        font-size: 14px;
+        font-size: 12px;
         text-align: center;
        }
 
@@ -310,7 +310,7 @@ body {
         text-align: center;
         font-size: 12px !important;
         margin-top: 0px;
-        transform : translateY(-10px);
+        transform : translateY(-25px);
        }
        
        .signature div:last-child {
