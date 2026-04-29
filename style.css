@@ -298,7 +298,8 @@ body {
        .version-label {
         font-size: 12px;
         text-align: left;
-        margin-left: 10px;
+        margin-left: 0px;
+        transform: translate(-60px);
        }
 
        #gameTitle {
@@ -307,12 +308,12 @@ body {
        }
 
        .signature {
-        position: static !important;
+        position: relative !important;
+        left:0;
+        margin-left: 0;
         text-align: left;
         font-size: 12px !important;
-        margin-top: 0px;
-        transform : translateY(-25px);
-        margin-left: 10px;
+        transform : translateY(-60 , -25px);
        }
        
        .signature div:last-child {
