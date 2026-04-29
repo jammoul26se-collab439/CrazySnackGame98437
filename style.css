@@ -265,7 +265,7 @@ body {
         .controls {
             margin:0;
             margin-left: 10px;
-            transform: translate(10px , 270px);
+            transform: translate(10px , 250px);
         }
 
        .controls button {
