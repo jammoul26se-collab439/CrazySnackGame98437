@@ -269,13 +269,13 @@ body {
         }
 
        .controls button {
-        width: 45px;
-        height: 45px;
-        font-size: 9px;
+        width: 55px;
+        height: 55px;
+        font-size: 10px;
        }
 
        .middle {
-        gap: 8px;
+        gap: 15px;
        }
 
        .buttons {
