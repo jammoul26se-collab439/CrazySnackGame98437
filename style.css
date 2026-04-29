@@ -298,6 +298,7 @@ body {
        .version-label {
         font-size: 12px;
         text-align: center;
+        transform: translateX(15px);
        }
 
        #gameTitle {

@@ -324,6 +324,7 @@ body {
             width: 52vw;
             height: 52vw;
             margin-left: 90px;
+            transform: translateX(25px);
         }
 
         canvas {
@@ -331,20 +332,24 @@ body {
             height: 100%;
         }
      
+        #loading {
+            font-size: 20px;
+        }
+
         .controls {
             margin:0;
             margin-left: 10px;
-            transform: translateY(80px);
+            transform: translate(-35px , 250px);
         }
 
        .controls button {
-        width: 45px;
-        height: 45px;
-        font-size: 9px;
+        width: 50px;
+        height: 50px;
+        font-size: 10px;
        }
 
        .middle {
-        gap: 8px;
+        gap: 13px;
        }
 
        .buttons {
@@ -364,6 +369,12 @@ body {
         font-size: 8px;
        }
 
+       .version-label {
+        font-size: 12px;
+        text-align: center;
+        transform: translateX(15px);
+       }
+
        #gameTitle {
         font-size: 14px;
         margin-top: 5px;
@@ -373,7 +384,8 @@ body {
         position: static !important;
         text-align: center;
         font-size: 12px !important;
-        margin-top: 10px;
+        margin-top: 0px;
+        transform : translateY(-25px);
        }
        
        .signature div:last-child {
@@ -499,6 +511,8 @@ body {
 
 
 
+
+
 game.js:
 
 if(window.innerWidth <=768 && !localStorage.getItem("mobileAlertShown")) {
@@ -549,7 +563,6 @@ startFx.volume=0.6;
 
 const tracks = [
     new Audio("MainSoundTrack01.mpeg"),
-    new Audio("MainSoundTrack03.m4a"),
     new Audio("MainSoundTrack02.mpeg")
 ];
 let currentTrackIndex = 0;

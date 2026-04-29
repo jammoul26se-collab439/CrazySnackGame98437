@@ -46,7 +46,6 @@ startFx.volume=0.6;
 
 const tracks = [
     new Audio("MainSoundTrack01.mpeg"),
-    new Audio("MainSoundTrack03.m4a"),
     new Audio("MainSoundTrack02.mpeg")
 ];
 let currentTrackIndex = 0;
