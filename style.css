@@ -243,13 +243,13 @@ body {
             flex-direction: row;
             justify-content: center;
             align-items: center;
-            gap: 8px;
+            gap: 12px;
         }
 
         .game-area {
             width: 52vw;
             height: 52vw;
-            margin-left: 10px;
+            margin-left: 25px;
         }
 
         canvas {
@@ -281,6 +281,8 @@ body {
         display: flex;
         flex-direction: column;
         gap: 5px;
+        align-self: center;
+        margin-right: 5px;
        }
 
        .buttons button {
@@ -295,18 +297,18 @@ body {
        }
 
        .signature {
-        position: static;
+        position: static !important;
         text-align: center;
-        font-size: 12px;
+        font-size: 12px !important;
         margin-top: 10px;
        }
        
        .signature div:last-child {
-        font-size: 10px;
+        font-size: 10px !important;
        }
 
        .by-jawad {
-        font-size: 16px;
+        font-size: 16px !important;
        }
        
     }  /*End @media(for mobiles) */
