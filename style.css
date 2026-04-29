@@ -277,7 +277,7 @@ body {
 
        .buttons {
         position: relative;
-        top: -60px;
+        top: -55px;
         display: flex;
         flex-direction: column;
         gap: 5px;
