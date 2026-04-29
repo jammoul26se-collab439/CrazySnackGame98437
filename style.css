@@ -250,6 +250,7 @@ body {
             width: 52vw;
             height: 52vw;
             margin-left: 90px;
+            transform: translateX(25px);
         }
 
         canvas {
@@ -257,10 +258,14 @@ body {
             height: 100%;
         }
      
+        #loading {
+            font-size: 20px;
+        }
+
         .controls {
             margin:0;
             margin-left: 10px;
-            transform: translateY(80px);
+            transform: translate(10px , 120px);
         }
 
        .controls button {
@@ -290,6 +295,11 @@ body {
         font-size: 8px;
        }
 
+       .version-label {
+        font-size: 14px;
+        text-align: center;
+       }
+
        #gameTitle {
         font-size: 14px;
         margin-top: 5px;
@@ -299,7 +309,8 @@ body {
         position: static !important;
         text-align: center;
         font-size: 12px !important;
-        margin-top: 10px;
+        margin-top: 0px;
+        transform : translateY(-10px);
        }
        
        .signature div:last-child {
