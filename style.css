@@ -269,13 +269,13 @@ body {
         }
 
        .controls button {
-        width: 55px;
-        height: 55px;
+        width: 50px;
+        height: 50px;
         font-size: 10px;
        }
 
        .middle {
-        gap: 15px;
+        gap: 13px;
        }
 
        .buttons {
@@ -297,7 +297,8 @@ body {
 
        .version-label {
         font-size: 12px;
-        text-align: center;
+        text-align: left;
+        margin-left: 10px;
        }
 
        #gameTitle {
@@ -307,10 +308,11 @@ body {
 
        .signature {
         position: static !important;
-        text-align: center;
+        text-align: left;
         font-size: 12px !important;
         margin-top: 0px;
         transform : translateY(-25px);
+        margin-left: 10px;
        }
        
        .signature div:last-child {
