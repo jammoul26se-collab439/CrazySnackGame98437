@@ -39,7 +39,7 @@ index.html :
     <div id="optionsMenu" class="options-menu">
         <div class = "options-box">
             <div style ="color:red; font-size:14px; margin-bottom:10px;">
-                This feature is currently disabled ! (Only Volume)
+                This feature is currently disabled ! 
             </div>  
 
             <h2>Options</h2>
@@ -69,8 +69,8 @@ index.html :
 
 
 
-
 style.css:
+
 
 body {
         margin: 0;
@@ -78,6 +78,7 @@ body {
         background-image: url(WallpaperPage.png);
         background-size: cover;
         background-position: center;
+        background-repeat: no-repeat;
         overflow-x: hidden;
     }
 
@@ -508,8 +509,6 @@ body {
             font-size: 27px;
             color: black;
         }
-
-
 
 
 
@@ -1224,6 +1223,3 @@ function exitGame() {
        }, 500);
       
      } 
-
-
-
