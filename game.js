@@ -69,32 +69,7 @@ const eatAppleSound = new Audio("EatAppleSoundTrack.m4a");
 
 const gameOverSounds = new Audio("GameOverSoundTrack.m4a");
 
-/*
-function resizeCanvas() {
-    const size = Math.min(window.innerWidth , 500);
-    canvas.style.width = size + "px";
-    canvas.style.height = size + "px";
 
-    canvas.width = 400;
-    canvas.height = 400;
-}
-window.addEventListener("resize" , resizeCanvas);
-resizeCanvas();
-
-function updateVolume() {
-    let volumeValue = volumeSlider.value;
-    let normalizedVolume = volumeValue / 100;
-
-    tracks.volume = normalizedVolume;
-    clickSound.volume = normalizedVolume;
-    eatAppleSound.volume = normalizedVolume;
-    gameOverSounds.volume = normalizedVolume;
-
-
-}
-volumeSlider.addEventListener("input" , updateVolume);
-
-*/
 function showShopMessage() {
     const msg = document.getElementById("shopMessage");
     msg.style.display = "block";
@@ -149,7 +124,7 @@ function openShop() {
     sound.play().catch( () => {});
 
     setTimeout( () => {
-        window.location.href="https://aboutme498398.netlify.app";
+        window.location.href="https://aboutme38392.pages.dev";
       } , 250);
    }
 
