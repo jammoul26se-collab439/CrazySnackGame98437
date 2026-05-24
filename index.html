@@ -17,7 +17,6 @@
                 <h1 id="gameTitle">Crazy Snake Game</h1>
                 <div id="countdown"></div>
                 <div id="startWarning">You should Start Game First!</div>
-                <div id="shopMessage">This feature is not available in this version</div>
                 <canvas id="game" width="400" height="400"></canvas>
             </div>
             <div class="controls">
@@ -34,21 +33,31 @@
             </div>
         </div>
     </div>
+
     <div id="optionsMenu" class="options-menu">
         <div class = "options-box">
-            <div style ="color:red; font-size:14px; margin-bottom:10px;">
-                This feature is currently disabled ! 
-            </div>  
-
             <h2>Options</h2>
-             <label>Volume</label>
-            <input type="range" id="volumeSlider" min="0" max="100" step="25" value="50"> 
-            <label>Screen Size</label>
+             <button id="soundToggleBtn" onclick = "toggleSound()" style = "margin: 25px auto 25px auto; width:220px; height:45px; font-size: 18px; background: #3498db;">Sound : Not Muted</button>
+            <label style="display:block; margin-top:15px;">Screen Size</label>
             <input type="range" id="sizeSlider" min="50" max="100" value="100">
             <button onclick="toggleOptions()">Close</button>
         </div>
     </div>
-    </div> <!-- zoomWrapper -->
+  <div id="shopMenu" class="options-menu">
+    
+        <div class ="options-box">
+            <h2>Shop</h2>
+            <div id="shopContent">
+              <button class="shop-item red-snake" onclick="trySelectSkin('red')">Red Snake</button>
+              <button class="shop-item blue-snake" onclick="trySelectSkin('blue')">Blue Snake</button>
+              <button class="shop-item default-snake" onclick="playClick(); setSnakeSkin('default'); toggleShop();" style="background: green; color:white;">Default Snake</button>
+            </div>
+            <div id="shopMessage" style="display:none; color:rgb(30, 181, 30); font-size:18px; background:none; position:absolute; top:145px; left:50%; transform:translateX(-50%);"></div>
+            <button onclick="toggleShop()">close</button>
+        </div>
+    </div>
+      
+</div> <!-- zoomWrapper -->
     <div class="buttons">
         <button id="startBtn" onclick="handleStartPause()">Start</button>
         <button class="restart-btn" onclick="restartGame()" disabled>Restart</button>
@@ -57,7 +66,7 @@
          <button class="about-btn" onclick="goToAbout()">About Us</button>
         <button class="exit-btn" onclick="exitGame()">Exit</button>
     </div>
-    <div class="version-label">Version 1.0</div>
+    <div class="version-label">Version 1.15</div>
     <div class="signature">
         <div class="by-jawad">By Jawad Jammoul</div>
         <div>&#169; 2026 All Right Reserved</div>

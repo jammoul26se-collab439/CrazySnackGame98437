@@ -8,7 +8,7 @@ if(window.innerWidth <=768 && !localStorage.getItem("mobileAlertShown")) {
 const canvas = document.getElementById("game");
 const ctx = canvas.getContext("2d");
 const box = 20;
-
+let soundMuted = false;
 let snake = [{x:5 , y:5}];
 let direction = "right";
 let gameOver = false;
@@ -16,7 +16,7 @@ let foodX = Math.floor(Math.random() * 20);
 let foodY = Math.floor(Math.random() * 20);
 let interval;
 let score = 0;
-
+let gameOverPlayed = false;
 
 let optionsOpen = false;
 let time=0;
@@ -31,11 +31,11 @@ let gameStarted = false;
 let isPaused = false;
 let isCountingDown = false;
 let restartLocked = false;
-// let gameState = "menu";
+let gameState = "menu";
 let pausedTime = 0;
-// let volumeSlider = document.getElementById("volumeSlider");
 let isExiting = false;
 let exitLocked = false;
+
 
 const startBtn = document.getElementById("startBtn");
 const countdownEl = document.getElementById("countdown");
@@ -63,24 +63,160 @@ const orangeImg = new Image();
 orangeImg.src = "Orange.jpg";
 
 const snakeHeadImg = new Image();
-snakeHeadImg.src = "SnackHeadU.png";
+const snakeHeadDefault = "SnackHeadU.png";
+const snakeHeadBlue = "SnackHeadBlue.jpeg";
+const snakeHeadRed = "SnackHeadRed.jpeg";
+
+
+
+snakeHeadImg.src = snakeHeadDefault;
 
 const eatAppleSound = new Audio("EatAppleSoundTrack.m4a");
 
 const gameOverSounds = new Audio("GameOverSoundTrack.m4a");
 
+let shopLocked = false;
+let shopOpen = false;
+setShopState(false);
+updateShopUnlocks();
 
-function showShopMessage() {
-    const msg = document.getElementById("shopMessage");
-    msg.style.display = "block";
+let snakeBodyColor = "lime";
+let currentSkin = "default";
 
-    setTimeout( () => {
-        msg.style.display = "none";
-    }, 1000);
+
+function setAboutState() {
+    const aboutBtn = document.querySelector(".about-btn");
+    if(!aboutBtn)
+        return;
+
+    if(isPaused || gameOver) {
+        aboutBtn.style.pointerEvents = "auto";
+        aboutBtn.style.opacity = "1";
+    }
+    else {
+        aboutBtn.style.pointerEvents = "none";
+        aboutBtn.style.opacity = "0.4";
+    }
 }
 
 
+function toggleSound() {
+    soundMuted = !soundMuted ;
+    const muteBtn = document.getElementById("soundToggleBtn");
+    if(soundMuted) {
+        muteBtn.textContent = "Sound : Muted";
+        muteBtn.style.background = "red";
+
+        tracks.forEach(track => track.muted = true);
+        clickSound.muted = true;
+        eatAppleSound.muted = true;
+        gameOverSounds.muted = true;
+        startFx.muted = true;
+    }
+
+    else {
+        tracks.forEach(track => track.muted = false);
+        muteBtn.style.background = "#3498db";
+        clickSound.muted = false;
+        eatAppleSound.muted = false;
+        gameOverSounds.muted = false;
+        startFx.muted = false;
+        muteBtn.textContent = "Sound : Not Muted";
+    }
+
+}
+
+function showShopMessage(text) {
+    const msg = document.getElementById("shopMessage");
+    msg.textContent = text;
+    msg.style.display = "block";
+    setTimeout( () => {
+        msg.style.display = "none";
+    }, 2000);
+}
+
+function trySelectSkin(color) {
+    if(color === "default" && currentSkin === "default") {
+        showShopMessage("You already use it");
+        return;
+    }
+    if(currentSkin === color) {
+        showShopMessage("You already use it");
+        return;
+    }
+    let required = color === "red" ? 100 : 200;
+    if(highScore < required) {
+        showShopMessage(`Need ${required} HighScore`);
+        return;
+    }
+    setSnakeSkin(color);
+    playClick();
+    toggleShop();
+}
+
+function setSnakeSkin(color) {
+    currentSkin = color;
+    if(color === "blue") {
+        snakeHeadImg.src = snakeHeadBlue;
+        snakeBodyColor = "blue";
+}
+    else if(color === "red") {
+        snakeHeadImg.src = snakeHeadRed;
+        snakeBodyColor = "red";
+    }
+    else {
+        snakeHeadImg.src = snakeHeadDefault;
+        snakeBodyColor = "lime";
+        currentSkin = "default";
+    }
+}
+
+function updateShopUnlocks() {
+    const redBtn = document.querySelector(".red-snake");
+    const blueBtn = document.querySelector(".blue-snake");
+    if(highScore < 100) {
+        redBtn.style.opacity = "0.5";
+        redBtn.style.cursor = "not-allowed";
+    }
+
+    else {
+        redBtn.style.opacity = "1";
+        redBtn.style.cursor = "pointer";
+    }
+
+    if(highScore < 200) {
+        blueBtn.style.opacity = "0.5";
+        blueBtn.style.cursor = "not-allowed";
+    }
+    else {
+        blueBtn.style.opacity = "1";
+        blueBtn.style.cursor = "pointer";
+    }
+}
+
+
+
+function setShopState(lock) {
+    const shopBtn = document.querySelector(".shop-btn");
+    const shopMenu = document.getElementById("shopMenu");
+    
+    shopLocked = lock;
+    if(lock) {
+        shopBtn.style.opacity = "0.5";
+        shopBtn.style.pointerEvents = "none";
+    
+    shopMenu.style.display = "none";
+    shopOpen = false;
+} else {
+    shopBtn.style.opacity = "1";
+    shopBtn.style.pointerEvents = "auto";
+    shopBtn.style.cursor = "pointer";
+    shopBtn.title = "";
+  }
+}  
 function playClick() {
+    if(soundMuted)
+        return;
     tracks.forEach(t => t.volume = 0.2 );
     const sound =clickSound.cloneNode();
     sound.volume = 1;
@@ -114,10 +250,28 @@ function stopMusic() {
 }
 
 function openShop() {
+    if(shopLocked)
+        return;
+
     playClick();
-    showShopMessage();
+    const menu = document.getElementById("shopMenu");
+    shopOpen = true;
+    menu.style.display = "flex";
+    menu.style.visibility = "visible";
+    menu.style.opacity = "1";
 }
 
+function toggleShop() {
+    if(shopLocked)
+        return;
+
+    playClick();
+    const menu = document.getElementById("shopMenu") ;
+    if(menu.style.display === "flex")
+        menu.style.display = "none";
+    else
+        menu.style.display = "flex";
+}
    function goToAbout() {
     const sound = clickSound.cloneNode();
     sound.volume = 1;
@@ -175,7 +329,7 @@ function showStartWarning() {
 
 function toggleOptions() {
     playClick();
-    if(!gameStarted) {
+    if(isCountingDown || gameState === "starting") {
         showStartWarning();
         return;
     }
@@ -187,20 +341,24 @@ function toggleOptions() {
         optionsOpen = true;
         menu.style.display = "flex";
          
-        wasPausedBeforeOptions = isPaused;
+        wasPausedBeforeOptions = (isPaused && gameStarted);
 
             clearInterval(interval);
             pauseTimer();
             pauseMusic();
-
+      if(gameStarted && gameState === "playing") {
             isPaused = true;
             startBtn.textContent = "Resume";
+            
+        }
+            
             currentTrack.pause();
 
     } else {
         optionsOpen = false;
         menu.style.display = "none";
-
+        if(!gameStarted || gameState !== "playing")
+            return;
         if(!wasPausedBeforeOptions) {
             startGame();
             resumeTimer();
@@ -218,16 +376,8 @@ document.getElementById("sizeSlider").addEventListener("input" , function() {
     document.getElementById("ZoomWrapper").style.transform = `scale(${scale})`;
 });
 
-document.getElementById("volumeSlider").addEventListener("input" , function() {
-    let volume = this.value / 100 ;
-    tracks.forEach(track => {
-         track.volume = volume;
-    });
-});
 
-
-function handleStartPause() {
-    
+function handleStartPause() {    
     if(gameState === "exiting") {
         return;
     }
@@ -249,6 +399,7 @@ function handleStartPause() {
         
         isPaused = true;
         startBtn.textContent = "Resume";
+        setAboutState();
         draw();
 
         return;
@@ -280,17 +431,19 @@ function handleStartPause() {
         resumeTimer();
         isPaused = false;
         startBtn.textContent = "Pause";
+        setAboutState();
     }
     
     playClick();
 }
 
-
-
-
 function startGameFlow() {
-    gameState = "starting"; 
+    setAboutState();
+    gameState = "starting";
+    updateShopUnlocks();
+    setShopState(true); 
     stopMusic();
+
     exitLocked = true;
     setTimeout(() => {
         exitLocked = false;
@@ -330,7 +483,7 @@ function startGameFlow() {
             gameState = "playing";
             startGame();
             playMusic();
-            time=0;
+            time = 0;
             timeDisplay.textContent = "00:00";
             startTimer();
         }
@@ -342,6 +495,7 @@ function startGameFlow() {
 
 
 function startGame() {
+    gameState="playing";
     clearInterval(interval);
     interval = setInterval(gameLoop , 200);
 }
@@ -351,9 +505,13 @@ function gameLoop() {
         return;
 
     if(gameOver) {
-        gameOverSounds.currentTime = 0;
-        gameOverSounds.play().catch( () => {});
-
+        setShopState(false);
+        if(!gameOverPlayed) {
+         gameOverSounds.currentTime = 0;
+         gameOverSounds.play().catch( () => {});
+         gameOverPlayed = true;
+         setAboutState();
+        }
         stopTimer();
         stopMusic();
         clearInterval(interval);
@@ -398,16 +556,16 @@ function draw() {
     snakeHeadImg,
     - box /2 ,
     - box /2 ,
-    box,
-    box
+    box ,
+    box  
    );    
    ctx.restore();
 
-   ctx.fillStyle = "lime";
+   ctx.fillStyle = snakeBodyColor;
     
     for(let i=1; i<snake.length ; i++) {
         let part = snake[i];
-        ctx.fillRect(part.x*box , part.y*box , box , box);
+        ctx.fillRect(part.x*box , part.y*box  , box  , box );
     }
 
     if(gameOver) {
@@ -422,11 +580,6 @@ function draw() {
         ctx.fillText("Pause" , 140 , 200);
     }
 }
-
-
-
-
-
 
 function update() {
     let head = {x:snake[0].x , y: snake[0].y};
@@ -451,8 +604,10 @@ function update() {
         generateFood();
 
         score += 2;
-        if(score > highScore) highScore = score;
-
+        if(score > highScore) {
+            highScore = score;
+            updateShopUnlocks();
+        }
         scoreDisplay.textContent = "Score: " + score.toString().padStart(4,"0");
         highScoreDisplay.textContent = "HighScore: " + highScore.toString().padStart(4,"0");
     }
@@ -482,8 +637,10 @@ function update() {
         if(points < 2) points = 2;
 
         score += points;
-        if(score > highScore) highScore = score;
-
+        if(score > highScore) {
+            highScore = score;
+            updateShopUnlocks();
+        }
         scoreDisplay.textContent = "Score: " + score.toString().padStart(4,"0");
         highScoreDisplay.textContent = "HighScore: " + highScore.toString().padStart(4,"0");
 
@@ -491,10 +648,6 @@ function update() {
         specialStartTime = null;
     }
 }
-
-
-
-
 
 
 function generateFood() {
@@ -536,8 +689,6 @@ function generateSpecialFood() {
 
         if(valid) {
             specialFood = {x:x , y:y};
-   //         spawnOrangeSound.currentTime = 0;
-   //         spawnOrangeSound.play.catch(() => {});
         }
     }
 
@@ -550,11 +701,6 @@ function generateSpecialFood() {
         specialStartTime = null;
     }, 7000);
 }
-
-
-
-
-
 
 function setDirection(dir) {
     if(isExiting)
@@ -573,6 +719,7 @@ function setDirection(dir) {
 let restartCooldown = false;
 
 function restartGame() {
+    setAboutState();
     gameState = "menu";
     
    
@@ -632,7 +779,7 @@ function restartGame() {
 }
 
 let exitLockedClick = false;
-let gameState = "menu";
+// let gameState = "menu";
 
 function exitGame() {
 
@@ -682,3 +829,5 @@ function exitGame() {
        }, 500);
       
      } 
+
+     

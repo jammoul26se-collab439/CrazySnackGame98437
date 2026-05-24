@@ -7,7 +7,9 @@ body {
         background-repeat: no-repeat;
         overflow-x: hidden;
     }
-
+    #shopMessage .options-box {
+      border: 2px solid gold;
+    }
     #shopMessage {
         position: absolute;
         top:70%;
@@ -36,6 +38,17 @@ body {
         display: none;
         z-index: 999;
         text-align: center;
+    }
+    .shop-item {
+        width: 80%;
+        align-self: center;
+        padding: 12px 16px;
+        border: none;
+        border-radius: 10px;
+        font-size: 16px;
+        color: white;
+        cursor: pointer;
+        transition: 0.2s ease;
     }
 
     .version-label {
@@ -204,7 +217,30 @@ body {
         cursor: not-allowed;
     }
 
-    
+    .red-snake {
+        background-color: red;
+    }
+
+    .red-snake:hover {
+        filter: brightness(1.2);
+    }
+
+    .blue-snake {
+        background-color: dodgerblue;
+    }    
+
+    .blue-snake:hover {
+        filter: brightness(1.2);
+    } 
+
+    #shopContent {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        margin-bottom: 15px;
+    }
+
+
     @media (max-width: 600px) {
         body {
             overflow-x: hidden;
@@ -346,6 +382,9 @@ body {
             width: 300px;
             text-align: center;
         }
+        .options-box h2{
+            margin-bottom: 12px;
+        }
 
         .options-box input[type="range"] {
             width:100%;
@@ -370,7 +409,13 @@ body {
             border: 2px solid #b35a00;
             background-color: orange;
         }
+        #soundToggleBtn {
+            margin-bottom: 12px !important;
+        }
 
+        .options-box label{
+            margin-bottom: 5px;
+        }
         .signature {
             position: absolute;
             right: 20px;
