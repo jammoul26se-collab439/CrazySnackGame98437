@@ -344,10 +344,12 @@ body {
        }
 
        .signature {
-        position: static !important;
+        right: auto;
+        left: 10px;
+        bottom: 10px;
+        position: absolute !important;
         text-align: center;
         font-size: 12px !important;
-        margin-top: 0px;
         transform : translateY(-25px);
        }
        
