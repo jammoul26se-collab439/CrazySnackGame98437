@@ -243,9 +243,7 @@ body {
 
     @media (max-width: 600px) {
         body {
-            min-height: 100vh;
             overflow-x: hidden;
-            overflow-y : hidden;
         }
 
         #ZoomWrapper{
@@ -346,13 +344,11 @@ body {
        }
 
        .signature {
-        right: auto;
-        left: 8px;
-        bottom: 60px;
-        position: absolute !important;
-        text-align: left;
+        position: static !important;
+        text-align: center;
         font-size: 12px !important;
-        transform : none;
+        margin-top: 0px;
+        transform : translateY(-25px);
        }
        
        .signature div:last-child {
@@ -363,7 +359,8 @@ body {
         font-size: 16px !important;
        }
        
-    }  /*End @media(for mobiles) */
+    }  
+
 
         .options-menu {
             position: fixed;
