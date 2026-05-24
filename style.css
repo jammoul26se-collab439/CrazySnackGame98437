@@ -243,7 +243,9 @@ body {
 
     @media (max-width: 600px) {
         body {
+            min-height: 100vh;
             overflow-x: hidden;
+            overflow-y : hidden;
         }
 
         #ZoomWrapper{
@@ -345,12 +347,12 @@ body {
 
        .signature {
         right: auto;
-        left: 10px;
-        bottom: 10px;
+        left: 8px;
+        bottom: 60px;
         position: absolute !important;
-        text-align: center;
+        text-align: left;
         font-size: 12px !important;
-        transform : translateY(-25px);
+        transform : none;
        }
        
        .signature div:last-child {
