@@ -21,14 +21,14 @@
             </div>
             <div class="controls">
                 <div class="row">
-                    <button onclick="setDirection('up')" style="background:#3498db;">Up</button>
+                    <button id="upBtn" onclick="setDirection('up')" style="background:#3498db;">Up</button>
                 </div>
                 <div class="row middle">
-                    <button onclick="setDirection('left')" style="background:#2ecc71;">Left</button>
-                    <button onclick="setDirection('right')" style="background:#f1c40f;">Right</button>
+                    <button id="leftBtn" onclick="setDirection('left')" style="background:#2ecc71;">Left</button>
+                    <button id="rightBtn" onclick="setDirection('right')" style="background:#f1c40f;">Right</button>
                 </div>
                 <div class="row">
-                    <button onclick="setDirection('down')" style="background:#e74c3c;">Down</button>
+                    <button id="downBtn" onclick="setDirection('down')" style="background:#e74c3c;">Down</button>
                 </div>
             </div>
         </div>
@@ -36,13 +36,27 @@
 
     <div id="optionsMenu" class="options-menu">
         <div class = "options-box">
-            <h2>Options</h2>
+            <h2 id ="optionsTitle">Options</h2>
              <button id="soundToggleBtn" onclick = "toggleSound()" style = "margin: 25px auto 25px auto; width:220px; height:45px; font-size: 18px; background: #3498db;">Sound : Not Muted</button>
-            <label style="display:block; margin-top:15px;">Screen Size</label>
-            <input type="range" id="sizeSlider" min="50" max="100" value="100">
-            <button onclick="toggleOptions()">Close</button>
-        </div>
-    </div>
+             <button id="speedBtn" onclick="toggleSpeedMenu()" style = "margin:0 auto 15px auto; width:220px; height:45px; font-size:18px; background:#16a085; color:black">Speed : Normal</button>
+             <div id="languageContainer">
+             <button id="languageBtn" onclick="toggleLanguageMenu()" style="margin:0 auto 15px auto; width:220px; height:45px; font-size:18px; background:#9b59b6; color:white;">Language</button>
+            <div id="languageMenu" class="language-menu">
+                <div onclick="selectLanguage('en')">English</div>
+                <div onclick="selectLanguage('fr')">Français</div>
+                <div onclick="selectLanguage('es')">Español</div>
+                <div onclick="selectLanguage('ru')">Русский</div>
+                <div onclick="selectLanguage('ar')">اللغة العربية</div>
+            </div> 
+            </div>
+               <label id="screenSizeLabel" style="display:block; margin-top:15px;">Screen Size</label>
+               <input type="range" id="sizeSlider" min="50" max="100" value="100">
+               <button id="closeBtn" onclick="toggleOptions()">Close</button>
+            </div>
+             </div>
+            
+             
+    
   <div id="shopMenu" class="options-menu">
     
         <div class ="options-box">
@@ -53,7 +67,7 @@
               <button class="shop-item default-snake" onclick="playClick(); setSnakeSkin('default'); toggleShop();" style="background: green; color:white;">Default Snake</button>
             </div>
             <div id="shopMessage" style="display:none; color:rgb(30, 181, 30); font-size:18px; background:none; position:absolute; top:145px; left:50%; transform:translateX(-50%);"></div>
-            <button onclick="toggleShop()">close</button>
+            <button id="shopCloseBtn" onclick="toggleShop()">close</button>
         </div>
     </div>
       
@@ -66,7 +80,7 @@
          <button class="about-btn" onclick="goToAbout()">About Us</button>
         <button class="exit-btn" onclick="exitGame()">Exit</button>
     </div>
-    <div class="version-label">Version 1.15</div>
+    <div class="version-label">Version 1.77</div>
     <div class="signature">
         <div class="by-jawad">By Jawad Jammoul</div>
         <div>&#169; 2026 All Right Reserved</div>
