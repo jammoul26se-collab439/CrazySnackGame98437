@@ -408,6 +408,20 @@ body {
        .by-jawad {
         font-size: 16px !important;
        }
+
+       #languageContainer {
+        position: relative;
+       }
+
+       .language-menu {
+        min-width: 90px ;
+        padding: 2px 0;
+       }
+
+       .language-menu div {
+        font-size: 11px;
+        padding: 5px 8px;
+       }
        
     }  
 
