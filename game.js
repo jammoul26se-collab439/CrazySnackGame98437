@@ -172,15 +172,10 @@ function setAboutState() {
     const aboutBtn = document.querySelector(".about-btn");
     if(!aboutBtn)
         return;
-    if(isPaused || gameOver) {
-        aboutBtn.style.pointerEvents = "auto";
-        aboutBtn.style.opacity = "1";
-    }
-    else {
-        aboutBtn.style.pointerEvents = "none";
-        aboutBtn.style.opacity = "0.4";
-    }
+    aboutBtn.style.pointerEvents = "auto";
+    aboutBtn.style.opacity = "1";
 }
+
 function toggleSound() {
     soundMuted = !soundMuted ;
     const muteBtn = document.getElementById("soundToggleBtn");
@@ -528,9 +523,9 @@ function gameLoop() {
         setShopState(false);
         if(!gameOverPlayed) {
          gameOverSounds.currentTime = 0;
+          setAboutState();
          gameOverSounds.play().catch( () => {});
          gameOverPlayed = true;
-         setAboutState();
         }
         stopTimer();
         stopMusic();
