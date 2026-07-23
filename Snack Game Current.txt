@@ -1,5 +1,6 @@
 index.html:
 
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -93,6 +94,7 @@ index.html:
 
 
 style.css:
+
 
 #languageBtn {
     border: none;
@@ -642,9 +644,8 @@ body {
             color: black;
         }
 
-
-
 game.js:
+
 if(window.innerWidth <=768 && !localStorage.getItem("mobileAlertShown")) {
     alert("Best played on a laptop for better layout and controls");
     localStorage.setItem("mobileAlertShown" , "true");
@@ -1517,3 +1518,4 @@ function exitGame() {
             break;
         }
      });
+

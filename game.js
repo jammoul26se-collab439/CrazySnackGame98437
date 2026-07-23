@@ -337,7 +337,7 @@ function toggleShop() {
     sound.volume = 1;
     sound.play().catch( () => {});
     setTimeout( () => {
-        window.location.href="https://aboutme38392.pages.dev";
+        window.location.href="https://mypersonalmainpage5600.jammoul26se.workers.dev/";
       } , 250);
    }
 function nextTrack() {
