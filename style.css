@@ -424,7 +424,11 @@ body {
        }
 
        #screenSizeLabel , #sizeSlider {
-        display:none
+        display:none !important;
+       }
+
+       .options-box label {
+        display: none !important;
        }
        
     }  
