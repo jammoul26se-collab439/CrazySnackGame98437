@@ -453,11 +453,10 @@ body {
     }  
 
        .shopCloseBtn {
-            width:220px;
+            width:120px;
             height: 45px;
             margin: 15px auto 0;
             display: block;
-            background-color: #8a2be2;
             color: white;
             font-size: 18px;
             border: none;
