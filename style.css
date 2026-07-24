@@ -439,9 +439,16 @@ body {
 
        #closeBtn {
         display: block;
-        width: 90px;
-        height: 32px;
-        font-size: 11px;
+        width: 220px;
+        height: 45px;
+        padding: 10px;
+        font-size: 14px !important;
+        color: white;
+        background-color: #8a2be2;
+        border: none;
+        border-radius: 10px;
+        cursor: pointer;
+        transition: 0.2s ease;
         margin: 15px auto 0 auto;
        }
        .shop-item {
