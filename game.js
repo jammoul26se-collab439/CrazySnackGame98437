@@ -159,7 +159,7 @@ function applyLanguage(lang) {
     buttons.forEach(btn => {
         if(lang === "ru") {
             if(window.innerWidth <= 600) 
-              btn.style.fontSize = "8px";
+              btn.style.fontSize = "5px";
             else
             btn.style.fontSize = "12px";
         }
