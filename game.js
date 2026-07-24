@@ -155,7 +155,7 @@ function applyLanguage(lang) {
     else
         speedBtn.textContent = t.speedEasy;
 
-    const buttons = document.querySelectorAll("button");
+    const buttons = document.querySelectorAll(".buttons button , .controls button , .shop-item");
     buttons.forEach(btn => {
         if(lang === "ru") {
             if(window.innerWidth <= 600) 
