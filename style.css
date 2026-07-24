@@ -437,19 +437,11 @@ body {
         align-items: center;
        }
 
-       #closeBtn {
-        display: block;
-        width: 220px;
-        height: 45px;
-        padding: 10px;
-        font-size: 14px !important;
-        color: white;
-        background-color: #8a2be2;
-        border: none;
-        border-radius: 10px;
-        cursor: pointer;
-        transition: 0.2s ease;
-        margin: 15px auto 0 auto;
+       #closeBtn , #shopCloseBtn {
+       width: 55px;
+       height: 30px;
+       font-size: 8px;
+       margin: 15px auto 0;
        }
        .shop-item {
         width: 220px;
@@ -459,6 +451,19 @@ body {
        }
        
     }  
+
+        #closeBtn , shopCloseBtn {
+            width:220px;
+            height: 45px;
+            margin: 15px auto 0;
+            display: block;
+            background-color: #8a2be2;
+            color: white;
+            font-size: 18px;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+        }
         .options-menu {
             position: fixed;
             top:0;
