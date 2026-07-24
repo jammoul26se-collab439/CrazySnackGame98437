@@ -154,16 +154,18 @@ function applyLanguage(lang) {
         speedBtn.textContent = t.speedHard;
     else
         speedBtn.textContent = t.speedEasy;
-}
-const buttons = [
-    startBtn, document.querySelector(".restart-btn"), document.querySelector(".options-btn"), document.querySelector(".shop-btn"), document.querySelector(".about-btn"), document.querySelector(".exit-btn"), document.getElementById("upBtn"), document.getElementById("downBtn"), document.getElementById("leftBtn"), document.getElementById("rightBtn"), document.getElementById("soundToggleBtn"), document.getElementById("speedBtn"), document.getElementById("languageBtn"), document.getElementById("closeBtn"), document.querySelector(".red-snake"), document.querySelector(".blue-snake"), document.querySelector(".default-snake"), document.getElementById("shopCloseBtn")
-];
 
-buttons.forEach(btn => {
-    if(!btn) 
-      return;
-    btn.style.fontSize = (lang === "ru") ? "14px" : "";
-});
+    const buttons = document.querySelectorAll("button");
+    buttons.forEach(btn => {
+        if(lang === "ru") {
+            btn.style.fontSize = "12px";
+        }
+        else {
+            btn.style.fontSize = "";
+        }
+    });
+}
+
 
 function toggleLanguageMenu() {
     playClick();
