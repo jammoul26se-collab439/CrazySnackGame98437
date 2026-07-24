@@ -437,7 +437,7 @@ body {
         align-items: center;
        }
 
-       #closeBtn , #shopCloseBtn {
+    .shopCloseBtn {
        width: 55px;
        height: 30px;
        font-size: 8px;
@@ -452,7 +452,7 @@ body {
        
     }  
 
-        #closeBtn , shopCloseBtn {
+       .shopCloseBtn {
             width:220px;
             height: 45px;
             margin: 15px auto 0;
