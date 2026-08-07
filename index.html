@@ -33,7 +33,6 @@
             </div>
         </div>
     </div>
-
     <div id="optionsMenu" class="options-menu">
         <div class = "options-box">
             <h2 id ="optionsTitle">Options</h2>
@@ -48,15 +47,20 @@
                 <div onclick="selectLanguage('ru')">Русский</div>
                 <div onclick="selectLanguage('ar')">اللغة العربية</div>
             </div> 
+            <button id="gameQRBtn" style="margin:0 auto 15px auto; width:220px; height:45px; font-size:18px; background:#e67e22; color:black;">Game QR Code</button>
             </div>
                <label id="screenSizeLabel" style="display:block; margin-top:15px;">Screen Size</label>
                <input type="range" id="sizeSlider" min="50" max="100" value="100">
-               <button class="shopCloseBtn" onclick="toggleOptions()">Close</button>
+               <button id="closeBtn" class="shopCloseBtn" onclick="toggleOptions()">Close</button>
             </div>
              </div>
-            
-             
-    
+             <div id="qrModal">
+                <div id="qrBox">
+                    <h3 id="qrTitle">Scan Crazy Snake Game</h3>
+                    <img src="SnakeQR.png" id="qrImage" alt="Game QR Code">
+                    <button id="closeQRBtn" class="shopCloseBtn">Close</button>
+                </div>
+             </div>
   <div id="shopMenu" class="options-menu">
         <div class ="options-box">
             <h2>Shop</h2>
@@ -66,10 +70,9 @@
               <button class="shop-item default-snake" onclick="playClick(); setSnakeSkin('default'); toggleShop();" style="background: green; color:white;">Default Snake</button>
             </div>
             <div id="shopMessage" style="display:none; color:rgb(30, 181, 30); font-size:18px; background:none; position:absolute; top:145px; left:50%; transform:translateX(-50%);"></div>
-            <button class="shopCloseBtn" onclick="toggleShop()">close</button>
+            <button id="shopCloseBtn" class="shopCloseBtn" onclick="toggleShop()">close</button>
         </div>
-    </div>
-      
+    </div>      
 </div> <!-- zoomWrapper -->
     <div class="buttons">
         <button id="startBtn" onclick="handleStartPause()">Start</button>
@@ -86,3 +89,4 @@
     </div>
     <script src="game.js"></script>
 </body>
+</html>

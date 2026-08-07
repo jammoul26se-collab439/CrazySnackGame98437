@@ -78,20 +78,21 @@ let snakeBodyColor = "lime";
 let currentSkin = "default";
    const translations = {
     en: {
-        start: "Start", restart: "Restart", options: "Options",  shop: "Shop",  about: "About Us", exit: "Exit", score: "Score", highScore: "HighScore", gameOver: "Game Over", up: "Up", left: "Left", right: "Right", down: "Down", version: "Version 1.77" , pause: "Pause", resume: "Resume", optionsTitle: "Options", soundMuted: "Sound : Muted", soundNotMuted: "Sound : Not Muted", language: "Language", screenSize: "Screen Size", close: "Close" , shopTitle: "Shop", redSnake: "Red Snake", blueSnake: "Blue Snake", defaultSnake: "Default Snake", shopClose: "Close", needHighScore: "Need {score} HighScore", alreadyUsing: "You already use it" , startCountdown: "Start!" , speedNormal: "Speed : Normal",  speedHard: "Speed : Hard",  speedEasy: "Speed : Easy"
+        start: "Start", restart: "Restart", options: "Options",  shop: "Shop",  about: "About Us", exit: "Exit", score: "Score", highScore: "HighScore", gameOver: "Game Over", up: "Up", left: "Left", right: "Right", down: "Down", version: "Version 1.77" , pause: "Pause", resume: "Resume", optionsTitle: "Options", soundMuted: "Sound : Muted", soundNotMuted: "Sound : Not Muted", language: "Language", screenSize: "Screen Size", close: "Close" , shopTitle: "Shop", redSnake: "Red Snake", blueSnake: "Blue Snake", defaultSnake: "Default Snake", shopClose: "Close", needHighScore: "Need {score} HighScore", alreadyUsing: "You already use it" , startCountdown: "Start!" , speedNormal: "Speed : Normal",  speedHard: "Speed : Hard",  speedEasy: "Speed : Easy" , qrButton: "Game QR Code", qrTitle: "Scan Crazy Snake Game", qrClose: "Close"
     },
     ar: {
-        start: "إبدأ", restart: "إعادة تشغيل", options: "الإعدادات", shop: "السوق", about: "معلومات عنا", exit: "الخروج", score: "النقاط", highScore: "أفضل نتيجة", gameOver: "انتهت اللعبة", up: "أعلى", left: "يسار", right: "يمين", down: "أسفل", version: "الإصدار 1.77" , pause: "إيقاف مؤقت", resume: "متابعة", optionsTitle: "الإعدادات", soundMuted: "الصوت : مكتوم", soundNotMuted: "الصوت : غير مكتوم", language: "اللغة",  screenSize: "حجم الشاشة", close: "إغلاق" , shopTitle: "السوق", redSnake: "الثعبان الأحمر", blueSnake: "الثعبان الأزرق", defaultSnake: "الثعبان الافتراضي", shopClose: "إغلاق", needHighScore: "تحتاج إلى أفضل نتيجة {score}", alreadyUsing: "أنت تستخدمه بالفعل" , startCountdown: "ابدأ!" , speedNormal: "السرعة : عادية", speedHard: "السرعة : صعبة", speedEasy: "السرعة : سهلة" 
+        start: "إبدأ", restart: "إعادة تشغيل", options: "الإعدادات", shop: "السوق", about: "معلومات عنا", exit: "الخروج", score: "النقاط", highScore: "أفضل نتيجة", gameOver: "انتهت اللعبة", up: "أعلى", left: "يسار", right: "يمين", down: "أسفل", version: "الإصدار 1.77" , pause: "إيقاف مؤقت", resume: "متابعة", optionsTitle: "الإعدادات", soundMuted: "الصوت : مكتوم", soundNotMuted: "الصوت : غير مكتوم", language: "اللغة",  screenSize: "حجم الشاشة", close: "إغلاق" , shopTitle: "السوق", redSnake: "الثعبان الأحمر", blueSnake: "الثعبان الأزرق", defaultSnake: "الثعبان الافتراضي", shopClose: "إغلاق", needHighScore: "تحتاج إلى أفضل نتيجة {score}", alreadyUsing: "أنت تستخدمه بالفعل" , startCountdown: "ابدأ!" , speedNormal: "السرعة : عادية", speedHard: "السرعة : صعبة", speedEasy: "السرعة : سهلة" , qrButton: "رمز QR للعبة", qrTitle: "امسح رمز لعبة Crazy Snake", qrClose: "إغلاق"
     },
     ru: {
-        start: "Начните", restart: "Перезагрузите", options: "Варианты", shop: "Магазин", about: "О нас", exit: "Выход", score: "Счёт", highScore: "Рекорд", gameOver: "Игра окончена", up: "Вверх", left: "Влево", right: "Вправо", down: "Вниз", version: "Версия 1.77" , pause: "Пауза", resume: "Продолжить", optionsTitle: "Настройки",soundMuted: "Звук : Выкл", soundNotMuted: "Звук : Вкл", language: "Язык", screenSize: "Размер экрана", close: "Закрыть" , shopTitle: "Магазин", redSnake: "Красная Змея", blueSnake: "Синяя Змея", defaultSnake: "Стандартная Змея", shopClose: "Закрыть", needHighScore: "Нужно {score} очков рекорда", alreadyUsing: "Вы уже используете её" , startCountdown: "Старт!" , speedNormal: "Скорость : Нормальная", speedHard: "Скорость : Сложная", speedEasy: "Скорость : Лёгкая"
+        start: "Начните", restart: "Перезагрузите", options: "Варианты", shop: "Магазин", about: "О нас", exit: "Выход", score: "Счёт", highScore: "Рекорд", gameOver: "Игра окончена", up: "Вверх", left: "Влево", right: "Вправо", down: "Вниз", version: "Версия 1.77" , pause: "Пауза", resume: "Продолжить", optionsTitle: "Настройки",soundMuted: "Звук : Выкл", soundNotMuted: "Звук : Вкл", language: "Язык", screenSize: "Размер экрана", close: "Закрыть" , shopTitle: "Магазин", redSnake: "Красная Змея", blueSnake: "Синяя Змея", defaultSnake: "Стандартная Змея", shopClose: "Закрыть", needHighScore: "Нужно {score} очков рекорда", alreadyUsing: "Вы уже используете её" , startCountdown: "Старт!" , speedNormal: "Скорость : Нормальная", speedHard: "Скорость : Сложная", speedEasy: "Скорость : Лёгкая" , qrButton: "QR-код игры", qrTitle: "Сканировать игру Crazy Snake", qrClose: "Закрыть"
+
      },
     es: {
-        start: "Iniciar", restart: "Reiniciar", options: "Opciones", shop: "Comprar", about: "Acerca de nosotros", exit: "Salir", score: "Puntuación", highScore: "Récord", gameOver: "Fin del juego", up: "Arriba", left: "Izquierda", right: "Derecha", down: "Abajo", version: "Versión 1.77" , pause: "Pausa", resume: "Continuar", optionsTitle: "Opciones", soundMuted: "Sonido : Silenciado", soundNotMuted: "Sonido : Activado", language: "Idioma", screenSize: "Tamaño de pantalla", close: "Cerrar" , shopTitle: "Tienda", redSnake: "Serpiente Roja", blueSnake: "Serpiente Azul", defaultSnake: "Serpiente Predeterminada", shopClose: "Cerrar", needHighScore: "Se necesita {score} de récord", alreadyUsing: "Ya la estás usando" , startCountdown: "¡Iniciar!" , speedNormal: "Velocidad : Normal", speedHard: "Velocidad : Difícil",  speedEasy: "Velocidad : Fácil"
-    },
+        start: "Iniciar", restart: "Reiniciar", options: "Opciones", shop: "Comprar", about: "Acerca de nosotros", exit: "Salir", score: "Puntuación", highScore: "Récord", gameOver: "Fin del juego", up: "Arriba", left: "Izquierda", right: "Derecha", down: "Abajo", version: "Versión 1.77" , pause: "Pausa", resume: "Continuar", optionsTitle: "Opciones", soundMuted: "Sonido : Silenciado", soundNotMuted: "Sonido : Activado", language: "Idioma", screenSize: "Tamaño de pantalla", close: "Cerrar" , shopTitle: "Tienda", redSnake: "Serpiente Roja", blueSnake: "Serpiente Azul", defaultSnake: "Serpiente Predeterminada", shopClose: "Cerrar", needHighScore: "Se necesita {score} de récord", alreadyUsing: "Ya la estás usando" , startCountdown: "¡Iniciar!" , speedNormal: "Velocidad : Normal", speedHard: "Velocidad : Difícil",  speedEasy: "Velocidad : Fácil" , qrButton: "Código QR del juego", qrTitle: "Escanear Crazy Snake Game", qrClose: "Cerrar"
+},
     fr: {
-        start: "Démarrer", restart: "Redémarrer", options: "Options", shop: "Acheter", about: "À propos de nous", exit: "Quitter", score: "Score", highScore: "Meilleur score", gameOver: "Partie terminée", up: "Haut", left: "Gauche", right: "Droite", down: "Bas", version: "Version 1.77" , pause: "Pause", resume: "Reprendre", optionsTitle: "Options", soundMuted: "Son : Coupé", soundNotMuted: "Son : Activé", language: "Langue", screenSize: "Taille de l'écran", close: "Fermer" , shopTitle: "Boutique", redSnake: "Serpent Rouge", blueSnake: "Serpent Bleu", defaultSnake: "Serpent Par Défaut", shopClose: "Fermer", needHighScore: "Score requis : {score}", alreadyUsing: "Vous l'utilisez déjà", startCountdown: "Démarrer !" , speedNormal: "Vitesse : Normale" , speedHard: "Vitesse : Difficile" , speedEasy: "Vitesse : Facile"
-    }
+        start: "Démarrer", restart: "Redémarrer", options: "Options", shop: "Acheter", about: "À propos de nous", exit: "Quitter", score: "Score", highScore: "Meilleur score", gameOver: "Partie terminée", up: "Haut", left: "Gauche", right: "Droite", down: "Bas", version: "Version 1.77" , pause: "Pause", resume: "Reprendre", optionsTitle: "Options", soundMuted: "Son : Coupé", soundNotMuted: "Son : Activé", language: "Langue", screenSize: "Taille de l'écran", close: "Fermer" , shopTitle: "Boutique", redSnake: "Serpent Rouge", blueSnake: "Serpent Bleu", defaultSnake: "Serpent Par Défaut", shopClose: "Fermer", needHighScore: "Score requis : {score}", alreadyUsing: "Vous l'utilisez déjà", startCountdown: "Démarrer !" , speedNormal: "Vitesse : Normale" , speedHard: "Vitesse : Difficile" , speedEasy: "Vitesse : Facile" , qrButton: "Code QR du jeu", qrTitle: "Scanner le jeu Crazy Snake", qrClose: "Fermer" 
+}
 };
 function toggleSpeedMenu() {
     playClick();
@@ -136,12 +137,19 @@ function applyLanguage(lang) {
     document.getElementById("optionsTitle").textContent = t.optionsTitle ;
     document.getElementById("languageBtn").textContent = t.language ;
     document.getElementById("screenSizeLabel").textContent = t.screenSize ;
-    document.getElementById("closeBtn").textContent = t.close ;
     document.querySelector("#shopMenu h2").textContent = t.shopTitle;
     document.querySelector(".red-snake").textContent = t.redSnake;
     document.querySelector(".blue-snake").textContent = t.blueSnake;
     document.querySelector(".default-snake").textContent = t.defaultSnake;
-    document.getElementById("shopCloseBtn").textContent = t.shopClose;
+    document.getElementById("gameQRBtn").textContent = t.qrButton;
+    document.getElementById("qrTitle").textContent = t.qrTitle;
+    document.getElementById("closeQRBtn").textContent = t.qrClose;
+    const closeBtn = document.getElementById("closeBtn");
+    if(closeBtn)
+        closeBtn.textContent = t.close;
+    const shopCloseBtn = document.getElementById("shopCloseBtn");
+    if(shopCloseBtn)
+        shopCloseBtn.textContent = t.shopClose;
     const soundBtn = document.getElementById("soundToggleBtn");
     if(soundMuted)
         soundBtn.textContent = t.soundMuted;
@@ -168,8 +176,6 @@ function applyLanguage(lang) {
         }
     });
 }
-
-
 function toggleLanguageMenu() {
     playClick();
     const menu = document.getElementById("languageMenu");
@@ -883,4 +889,12 @@ function exitGame() {
             setDirection("right");
             break;
         }
+     });
+     document.getElementById("gameQRBtn").addEventListener("click" , function() {
+        playClick();
+        document.getElementById("qrModal").style.display = "flex" ;
+     });
+     document.getElementById("closeQRBtn").addEventListener("click" , function() {
+        playClick();
+        document.getElementById("qrModal").style.display = "none" ;
      });
